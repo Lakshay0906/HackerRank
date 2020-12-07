@@ -1,0 +1,20 @@
+function deleteNode(head, position) {
+    var curr, prev, it = 0;
+    curr = head;
+    prev = curr;
+    
+    if(position === 0) {
+        head = curr.next;
+    }
+    else {
+        while (it < position) {
+            it++;
+            prev = curr;
+            curr = curr.next;
+        }
+        
+        prev.next = curr.next;
+    }
+     
+    return head;
+}

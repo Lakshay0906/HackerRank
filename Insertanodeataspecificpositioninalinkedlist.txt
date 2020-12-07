@@ -1,0 +1,24 @@
+function insertNodeAtPosition(head, data, position) {
+    var node = new SinglyLinkedListNode(data);
+    var curr, prev, it = 0;
+    curr = head;
+    
+    if(position === 0) {
+        node.next = head;
+        head = node;
+    }
+    
+    else {
+        curr = head;
+        while(it < position) {
+            it++;
+            prev = curr;
+            curr = curr.next;
+        }
+        
+        node.next = curr;
+        prev.next = node;
+    }
+
+    return head;
+}
