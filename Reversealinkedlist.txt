@@ -1,0 +1,16 @@
+function reverse(head) {
+    var curr = head;
+    var prev = null;
+    while(true) {
+        var next = curr.next;
+        curr.next = prev;
+        prev = curr;
+        
+        if(!next) 
+            break;
+        
+        curr = next;
+    }
+    
+    return curr;
+}

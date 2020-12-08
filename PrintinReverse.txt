@@ -1,0 +1,9 @@
+function reversePrint(head) {
+    var a = [];
+    var curr = head;
+    while(curr) {
+        a.unshift(curr.data);
+        curr = curr.next;
+    }
+    console.log(a.join('\n'));
+}

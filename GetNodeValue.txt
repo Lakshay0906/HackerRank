@@ -1,0 +1,13 @@
+function getNode(head, positionFromTail) {
+  var result = head;
+    var index = 0;
+    while (head) {
+        if (index > positionFromTail) {
+            result = result.next;
+        }
+        
+        head = head.next;
+        index++;
+    }
+    return result.data;
+}
