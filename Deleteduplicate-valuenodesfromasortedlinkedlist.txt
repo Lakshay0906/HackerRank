@@ -1,0 +1,31 @@
+function getNewNode(value) {
+        return { data: value, next: null };
+}
+
+function removeDuplicates(head) {
+    let currentNode = head;
+    let newHead = null;
+    let newTail = newHead;
+    let prevNode = getNewNode(null);
+
+    while (currentNode != null) {
+        if (currentNode.data != prevNode.data) {
+            let newNode = getNewNode(currentNode.data);
+
+            if (newHead == null) {
+                newHead = newNode;
+                newTail = newHead
+            } 
+            else {
+                newTail.next = newNode;
+                newTail = newNode;
+            }
+        }
+
+        prevNode = currentNode;
+        currentNode = currentNode.next;
+    }
+   
+    return newHead;
+}
+
